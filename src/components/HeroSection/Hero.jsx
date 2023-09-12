@@ -11,10 +11,7 @@ export const Hero = () => {
   return (
     <div className={styles.carousel}>
       <div style={{ position: 'absolute', zIndex: "1", width: '100%' }}>
-        <h1>h1</h1>
         <Navigation />
-
-        <button onClick={() => setCurrent(prev => prev + 1)}>click</button>
       </div>
       {
         mock.length > 0 ?
@@ -28,7 +25,7 @@ export const Hero = () => {
                   />
                   <div className={styles.overlay}>
                     <Container>
-                      <h1>Ade</h1>
+
                     </Container>
                   </div>
 
