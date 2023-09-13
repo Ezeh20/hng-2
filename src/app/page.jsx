@@ -1,3 +1,4 @@
+"use client"
 import Hero from '@/components/HeroSection'
 import Featured from '@/components/FeaturedSection'
 import styles from './page.module.scss'

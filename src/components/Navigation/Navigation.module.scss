@@ -19,6 +19,10 @@
             align-items: center;
             gap: 1rem;
 
+            @media screen and (min-width:768px) {
+                gap: 1.5rem;
+            }
+
             .text {
                 font-size: fn.rem(16);
                 color: #ffff;
@@ -70,6 +74,11 @@
 
                 &:hover {
                     cursor: pointer;
+                    transform: scale(1.25);
+                }
+
+                @media screen and (min-width:1024px) {
+                    top: 2px;
                 }
             }
         }
