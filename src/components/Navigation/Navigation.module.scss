@@ -27,6 +27,10 @@
                 font-size: fn.rem(16);
                 color: #ffff;
                 font-weight: 700;
+
+                @media screen and (max-width:320px) {
+                    font-size: fn.rem(12);
+                }
             }
 
             .textAlt {
@@ -38,7 +42,7 @@
 
         .inputContainer {
             position: absolute;
-            top: 4rem;
+            top: 5rem;
             width: 100%;
 
             @media screen and (min-width:1024px) {

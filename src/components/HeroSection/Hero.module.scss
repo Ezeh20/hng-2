@@ -4,8 +4,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: fn.rem(600);
+    height: 100vh;
     position: relative;
+    
 
     .carouselContainer {
         position: relative;
@@ -40,17 +41,25 @@
 
                 .overlayContent {
                     display: flex;
-                    gap: 1.5rem;
+                    gap: 3rem;
                     justify-content: center;
                     width: 100%;
-                    padding-top: 5rem;
-                    height: fn.rem(600);
+                    padding-top: 4rem;
+                    height: 100vh;
                     color: #fff;
                     flex-direction: column;
 
+                    @media screen and (max-width:350px) {
+                      padding-top: 6rem;
+                      gap: 1rem;
+                    }
+
                     @media screen and (min-width: 768px) {
-                        gap: 2.5rem;
-                        padding-top: 0;
+                        gap: 3rem;
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        height: 100vh;
                     }
 
                     .title {
@@ -77,6 +86,16 @@
                         }
                     }
 
+                    @media screen and (max-width:350px) {
+                        .title {
+                            font-size: fn.rem(20);
+                        }
+
+                        .overview {
+                            font-size: fn.rem(14);
+                        }
+                    }
+
                     @media screen and (min-width: 1024px) {
                         .title {
                             line-height: fn.rem(45);
@@ -84,7 +103,7 @@
                         }
 
                         .overview {
-                            font-size: fn.rem(18);
+                            font-size: fn.rem(20);
                         }
                     }
 
