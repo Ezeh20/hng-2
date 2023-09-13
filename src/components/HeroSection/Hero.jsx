@@ -9,7 +9,7 @@ import Container from '../Container'
 import styles from './Hero.module.scss'
 
 export const Hero = () => {
-  const [current, setCurrent] = useState(0)
+  const [current, setCurrent] = useState(1)
   const { data, isLoading, error } = useSwr()
   const result = data?.data.results
   const slides = result?.slice(0, 5)
