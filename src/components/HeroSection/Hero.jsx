@@ -11,14 +11,18 @@ import imbd from '../../assets/imbd.svg'
 import tomato from '../../assets/tomato.svg'
 import Container from '../Container'
 import styles from './Hero.module.scss'
+const pag = [1, 2, 3, 4, 5]
 
 export const Hero = () => {
-  const [current, setCurrent] = useState(3)
+  const [current, setCurrent] = useState(4)
   const { data, isLoading, error } = useSwr()
   const result = data?.data.results
   const slides = result?.slice(0, 5)
 
-  console.log(slides);
+  const changeSlide = (idx) => {
+    setCurrent(idx)
+  }
+
   return (
     <div className={styles.carousel}>
       <div style={{ position: 'absolute', zIndex: "1", width: '100%' }}>
@@ -38,27 +42,42 @@ export const Hero = () => {
                   />
                   <div className={styles.overlay}>
                     <Container>
-                      <div className={styles.overlayContent}>
-                        <p className={styles.title}>{original_title}</p>
-                        <p className={styles.overview}>{overview}</p>
-                        <div className={styles.rating}>
-                          <div className={styles.icon}>
-                            <Image src={imbd} alt='imbd' />
-                            <p>{imbdRating.toFixed(1)} / 100</p>
+                      <div className={styles.layout}>
+                        <div className={styles.overlayContent}>
+                          <p className={styles.title}>{original_title}</p>
+                          <p className={styles.overview}>{overview}</p>
+                          <div className={styles.rating}>
+                            <div className={styles.icon}>
+                              <Image src={imbd} alt='imbd' />
+                              <p>{imbdRating.toFixed(1)} / 100</p>
+                            </div>
+                            <div className={styles.icon}>
+                              <Image src={tomato} alt='tomato' />
+                              <p>{tomatoRating}%</p>
+                            </div>
                           </div>
-                          <div className={styles.icon}>
-                            <Image src={tomato} alt='tomato' />
-                            <p>{tomatoRating}%</p>
-                          </div>
+                          <Link href={`/${id}`} className={styles.link}>
+                            <Button className={styles.button}>
+                              <Image src={play} alt='play' />
+                              <p>Watch trailer</p>
+                            </Button>
+                          </Link>
                         </div>
-                        <Link href={`/${id}`} className={styles.link}>
-                          <Button className={styles.button}>
-                            <Image src={play} alt='play' />
-                            <p>Watch trailer</p>
-                          </Button>
-                        </Link>
+                        <div className={styles.pagContainer}>
+                          {
+                            pag.map((itm, idx) => {
+                              return (
+                                <p className={current === idx ? `${styles.numAlt} ${styles.num} ` : `${styles.num}`}
+                                  key={itm} onClick={() => changeSlide(idx)}>
+                                  {itm}
+                                </p>
+                              )
+                            })
+                          }
+                        </div>
                       </div>
                     </Container>
+
                   </div>
 
                 </div>
