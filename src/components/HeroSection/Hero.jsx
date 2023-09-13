@@ -13,6 +13,7 @@ export const Hero = () => {
   const { data, isLoading, error } = useSwr()
   const result = data?.data.results
   const slides = result?.slice(0, 5)
+  
 
   console.log(slides);
   return (
