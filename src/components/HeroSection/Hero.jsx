@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSwr } from '@/hooks/useSwr/useSwr'
 import Navigation from '../Navigation'
 import Image from 'next/image'
@@ -14,15 +14,28 @@ import styles from './Hero.module.scss'
 const pag = [1, 2, 3, 4, 5]
 
 export const Hero = () => {
-  const [current, setCurrent] = useState(4)
+  const [current, setCurrent] = useState(2)
   const { data, isLoading, error } = useSwr()
   const result = data?.data.results
   const slides = result?.slice(0, 5)
 
+  //move to next slide onClick
   const changeSlide = (idx) => {
     setCurrent(idx)
   }
 
+  //autoplay { 3 seconds }
+  useEffect(() => {
+    let play = null;
+    play = setTimeout(() => {
+      nextSLide()
+    }, 3500)
+    return () => clearTimeout(play)
+  })
+
+  const nextSLide = () => {
+    setCurrent(current === slides?.length - 1 ? 0 : current + 1)
+  }
   return (
     <div className={styles.carousel}>
       <div style={{ position: 'absolute', zIndex: "1", width: '100%' }}>

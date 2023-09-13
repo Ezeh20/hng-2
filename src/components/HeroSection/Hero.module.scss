@@ -49,7 +49,8 @@
                     position: relative;
                     display: flex;
                     height: 100vh;
-    
+                    transition: all 300ms linear;
+
                     @media screen and (orientation: landscape) {
                         @media screen and (max-height:500px) {
                             height: fn.rem(700);
@@ -66,7 +67,7 @@
 
                     .overlayContent {
                         display: flex;
-                        gap: 2.5rem;
+                        gap: 3rem;
                         justify-content: center;
                         width: 100%;
                         padding-top: 4rem;
@@ -82,13 +83,10 @@
                             padding-top: 6rem;
                             gap: 1rem;
                         }
-
-                        @media screen and (min-width: 768px) {
-                            gap: 3rem;
-                        }
+            
 
                         @media screen and (min-width: 1024px) {
-                            gap: 3rem;
+                            gap: 4rem;
                             height: 100vh;
                         }
 
@@ -161,7 +159,7 @@
                     .pagContainer {
                         position: absolute;
                         width: 100%;
-                        bottom: 2.5rem;
+                        bottom: 4.5rem;
                         color: #fff;
                         display: flex;
                         justify-content: center;
@@ -170,6 +168,10 @@
                         margin: 6rem 0 0;
                         column-gap: .5rem;
                         row-gap: fn.rem(4);
+
+                        @media screen and (max-height:700px) {
+                            bottom: 1.5rem;
+                        }
 
                         @media screen and (min-width:1024px) {
                             position: initial;
@@ -191,7 +193,13 @@
 
                         .numAlt {
                             transform: scale(2);
+                            margin-bottom: .1rem;
+                           
                             font-weight: 700;
+
+                            @media screen and (min-width:1024px) {
+                                margin-bottom: 0;
+                            }
                         }
                     }
                 }
