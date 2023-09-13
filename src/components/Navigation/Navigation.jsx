@@ -13,7 +13,7 @@ export const Navigation = () => {
         <nav className={styles.nav}>
           <div className={styles.lgi}>
             <Image src={logo} alt='logo' />
-            <p className={`${styles.text} ${styles.textAlt}`}>Movie</p>
+            <p className={`${styles.text} ${styles.textAlt}`}>MovieBox</p>
           </div>
           <div className={styles.inputContainer}>
             <input type='text' placeholder='what do you want to watch?' className={styles.input} />

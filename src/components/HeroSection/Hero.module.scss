@@ -4,58 +4,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: fn.rem(400);
+    height: fn.rem(600);
     position: relative;
-
-    @media screen and (min-width: 768px) {
-        height: fn.rem(600);
-    }
-
-    .btn {
-        background-color: transparent;
-        color: #fff;
-        opacity: .5;
-        font-size: fn.rem(28);
-        left: 1.5rem;
-        top: 40%;
-        position: absolute;
-        transition: all 500ms ease-in-out;
-        z-index: 1;
-        display: none;
-
-        &:hover {
-            cursor: pointer;
-            opacity: 1;
-        }
-
-        @media screen and (min-width: 1024px) {
-            font-size: fn.rem(45);
-            display: block;
-        }
-    }
-
-    .btn2 {
-        background-color: transparent;
-        color: #fff;
-        opacity: .5;
-        font-size: fn.rem(28);
-        right: 1.5rem;
-        top: 40%;
-        position: absolute;
-        transition: all 500ms ease-in-out;
-        z-index: 10;
-        display: none;
-
-        &:hover {
-            cursor: pointer;
-            opacity: 1;
-        }
-
-        @media screen and (min-width: 1024px) {
-            font-size: fn.rem(45);
-            display: block;
-        }
-    }
 
     .carouselContainer {
         position: relative;
@@ -85,7 +35,79 @@
                 position: absolute;
                 inset: 0;
                 width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, .6);
 
+                .overlayContent {
+                    display: flex;
+                    gap: 1.5rem;
+                    justify-content: center;
+                    width: 100%;
+                    padding-top: 5rem;
+                    height: fn.rem(600);
+                    color: #fff;
+                    flex-direction: column;
+
+                    @media screen and (min-width: 768px) {
+                        gap: 2.5rem;
+                        padding-top: 0;
+                    }
+
+                    .title {
+                        font-size: fn.rem(24);
+                        max-width: fn.rem(500);
+                        font-weight: 700;
+                    }
+
+                    .overview {
+                        font-size: fn.rem(17);
+                        max-width: fn.rem(600);
+                        font-weight: 500;
+                    }
+
+                    .rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 2rem;
+
+                        .icon {
+                            display: flex;
+                            align-items: center;
+                            gap: .8rem;
+                        }
+                    }
+
+                    @media screen and (min-width: 1024px) {
+                        .title {
+                            line-height: fn.rem(45);
+                            font-size: fn.rem(48);
+                        }
+
+                        .overview {
+                            font-size: fn.rem(18);
+                        }
+                    }
+
+                    .link {
+                        width: max-content;
+
+                        .button {
+                            display: flex;
+                            align-items: center;
+                            padding: 12px 16px;
+                            gap: fn.rem(10);
+                            border-radius: fn.rem(8);
+                            font-weight: 400;
+                            text-transform: uppercase;
+                            transition: all 250ms linear;
+
+                            &:hover {
+                                cursor: pointer;
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
             }
         }
 
@@ -94,7 +116,5 @@
             transform: translateY(0);
             pointer-events: visible;
         }
-
     }
-
 }
