@@ -6,7 +6,13 @@
     width: 100%;
     height: 100vh;
     position: relative;
-    
+
+    @media screen and (orientation: landscape) {
+        @media screen and (max-height:500px) {
+            height: fn.rem(700);
+        }
+    }
+
 
     .carouselContainer {
         position: relative;
@@ -49,9 +55,16 @@
                     color: #fff;
                     flex-direction: column;
 
+                    @media screen and (orientation: landscape) {
+                        @media screen and (max-height:500px) {
+                            height: fn.rem(700);
+                        }
+                    }
+
+
                     @media screen and (max-width:350px) {
-                      padding-top: 6rem;
-                      gap: 1rem;
+                        padding-top: 6rem;
+                        gap: 1rem;
                     }
 
                     @media screen and (min-width: 768px) {
