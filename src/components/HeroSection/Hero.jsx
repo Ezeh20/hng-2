@@ -28,7 +28,7 @@ export const Hero = () => {
 
               return (
                 <div key={id} className={idx === current ? `${styles.hero} ${styles.heroActive}` : `${styles.hero}`}>
-                  <Image src={getImage.original(backdrop_path)} alt="backdrop" className={styles.backDrop}
+                  <Image width={'100%'} height={'100%'} src={getImage.original(backdrop_path)} alt="backdrop" className={styles.backDrop}
                   />
                   <div className={styles.overlay}>
                     <Container>
