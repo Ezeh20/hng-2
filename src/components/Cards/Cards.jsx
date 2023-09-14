@@ -14,7 +14,7 @@ export const Cards = ({ itm }) => {
     const tomatoRating = (vote_average * 10)
 
     return (
-        <Link href={`/movies/${id}`}>
+        <Link prefetch={false} href={`/movies/${id}`}>
             <div data-testid='movie-card' className={styles.cardContainer}>
                 <Image data-testid='movie-poster'
                     width={250}

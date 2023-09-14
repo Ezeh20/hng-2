@@ -4,7 +4,7 @@ import { DM_Sans } from 'next/font/google'
 const dm = DM_Sans({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Task 2',
+  title: 'MovieBox',
   description: 'Movie discovery web app',
 }
 

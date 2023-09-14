@@ -5,8 +5,7 @@
     flex-direction: column;
 
     .img {
-        background-color: red;
-        width: 100%;
+        width: auto;
         height: 370px;
     }
 
@@ -30,13 +29,15 @@
                 font-size: 20px;
             }
         }
-        .rating{
+
+        .rating {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             color: #111827;
             justify-content: space-between;
-            .ratingContent{
+
+            .ratingContent {
                 @extend .rating;
                 justify-content: initial;
                 gap: .5rem;
