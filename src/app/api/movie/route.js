@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 
 export const GET = async () => {
-    const response = await fetch(`${process.env.BASE_URL}/movie/popular?api_key=${process.env.API_KEY}`)
+    const response = await fetch(`${process.env.BASE_URL}/movie/top_rated?api_key=${process.env.API_KEY}`)
     const data = await response.json()
 
     if (data.results) {

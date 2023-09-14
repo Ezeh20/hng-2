@@ -83,7 +83,7 @@
                             padding-top: 6rem;
                             gap: 1rem;
                         }
-            
+
 
                         @media screen and (min-width: 1024px) {
                             gap: 4rem;
@@ -160,7 +160,6 @@
                         position: absolute;
                         width: 100%;
                         bottom: 4.5rem;
-                        color: #fff;
                         display: flex;
                         justify-content: center;
                         align-items: center;
@@ -183,18 +182,34 @@
                         }
 
                         .num {
-                            font-size: fn.rem(12);
+                            position: relative;
+                            font-size: fn.rem(14);
+                            color: #9CA3AF;
                             padding: .6rem;
 
                             &:hover {
                                 cursor: pointer;
+                            }
+
+                            .indicator {
+                                position: absolute;
+                                left: -1rem;
+                                top: 1.05rem;
+                                display: none;
+                            }
+
+                            @media screen and (min-width: 1024px) {
+                                .indicator {
+                                    display: flex;
+                                }
+
                             }
                         }
 
                         .numAlt {
                             transform: scale(2);
                             margin-bottom: .1rem;
-                           
+                            color: #fff;
                             font-weight: 700;
 
                             @media screen and (min-width:1024px) {

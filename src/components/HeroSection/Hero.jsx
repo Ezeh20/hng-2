@@ -1,11 +1,11 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import { useSwr } from '@/hooks/useSwr/useSwr'
 import Navigation from '../Navigation'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../Button/Button'
 import { getImage } from '@/helpers/getImage/getImage'
+import indicator from '../../assets/pointer.svg'
 import play from '../../assets/play.svg'
 import imbd from '../../assets/imbd.svg'
 import tomato from '../../assets/tomato.svg'
@@ -13,9 +13,8 @@ import Container from '../Container'
 import styles from './Hero.module.scss'
 const pag = [1, 2, 3, 4, 5]
 
-export const Hero = () => {
+export const Hero = ({ data }) => {
   const [current, setCurrent] = useState(2)
-  const { data, isLoading, error } = useSwr()
   const result = data?.data.results
   const slides = result?.slice(0, 5)
 
@@ -29,13 +28,14 @@ export const Hero = () => {
     let play = null;
     play = setTimeout(() => {
       nextSLide()
-    }, 3500)
+    }, 4500)
     return () => clearTimeout(play)
   })
 
   const nextSLide = () => {
     setCurrent(current === slides?.length - 1 ? 0 : current + 1)
   }
+
   return (
     <div className={styles.carousel}>
       <div style={{ position: 'absolute', zIndex: "1", width: '100%' }}>
@@ -50,8 +50,13 @@ export const Hero = () => {
               let tomatoRating = vote_average * 100 / 10
 
               return (
-                <div key={id} className={idx === current ? `${styles.hero} ${styles.heroActive}` : `${styles.hero}`}>
-                  <Image fill src={getImage.original(backdrop_path)} alt="backdrop" className={styles.backDrop}
+                <div key={id} className={idx === current
+                  ? `${styles.hero} ${styles.heroActive}`
+                  : `${styles.hero}`}>
+                  <Image fill
+                    src={getImage.original(backdrop_path)}
+                    alt="backdrop"
+                    className={styles.backDrop}
                   />
                   <div className={styles.overlay}>
                     <Container>
@@ -66,10 +71,10 @@ export const Hero = () => {
                             </div>
                             <div className={styles.icon}>
                               <Image src={tomato} alt='tomato' />
-                              <p>{tomatoRating}%</p>
+                              <p>{tomatoRating.toFixed(1)}%</p>
                             </div>
                           </div>
-                          <Link href={`/${id}`} className={styles.link}>
+                          <Link href={`/movie/${id}`} className={styles.link}>
                             <Button className={styles.button}>
                               <Image src={play} alt='play' />
                               <p>Watch trailer</p>
@@ -80,10 +85,11 @@ export const Hero = () => {
                           {
                             pag.map((itm, idx) => {
                               return (
-                                <p className={current === idx ? `${styles.numAlt} ${styles.num} ` : `${styles.num}`}
-                                  key={itm} onClick={() => changeSlide(idx)}>
-                                  {itm}
-                                </p>
+                                <div key={itm} className={current === idx ? `${styles.numAlt} ${styles.num} ` : `${styles.num}`}
+                                  onClick={() => changeSlide(idx)}>
+                                  {current === idx ? <Image src={indicator} alt='indicator' className={styles.indicator} /> : undefined}
+                                  <p>{itm}</p>
+                                </div>
                               )
                             })
                           }
