@@ -1,11 +1,18 @@
 @use '../../scss/utils/functions'as fn;
 
 .header {
+    position: fixed;
     width: 100%;
+    height: fn.rem(200);
+    z-Index: 1;
     padding: fn.rem(18) 0;
 
     @media screen and (min-width:768px) {
         padding: fn.rem(24) 0;
+    }
+
+    @media screen and (min-width:1024px) {
+        height: initial;
     }
 
     .nav {
@@ -87,4 +94,8 @@
             }
         }
     }
+}
+
+.changeBg {
+    background-color: rgba(0, 0, 0, .3);
 }

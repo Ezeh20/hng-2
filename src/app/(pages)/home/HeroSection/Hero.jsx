@@ -38,9 +38,7 @@ export const Hero = ({ data }) => {
 
   return (
     <div className={styles.carousel}>
-      <div style={{ position: 'absolute', zIndex: "1", width: '100%' }}>
-        <Navigation />
-      </div>
+      <Navigation />
       {
         slides?.length > 0 ?
           <div className={styles.carouselContainer}>
