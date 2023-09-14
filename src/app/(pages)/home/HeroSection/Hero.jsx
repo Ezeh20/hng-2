@@ -1,15 +1,15 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-import Navigation from '../Navigation'
+import Navigation from '@/components/Navigation'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Button } from '../Button/Button'
+import { Button } from '@/components/Button/Button'
 import { getImage } from '@/helpers/getImage/getImage'
-import indicator from '../../assets/pointer.svg'
-import play from '../../assets/play.svg'
-import imbd from '../../assets/imbd.svg'
-import tomato from '../../assets/tomato.svg'
-import Container from '../Container'
+import indicator from '../../../../assets/pointer.svg'
+import play from '../../../../assets/play.svg'
+import imbd from '../../../../assets/imbd.svg'
+import tomato from '../../../../assets/tomato.svg'
+import Container from '@/components/Container'
 import styles from './Hero.module.scss'
 const pag = [1, 2, 3, 4, 5]
 

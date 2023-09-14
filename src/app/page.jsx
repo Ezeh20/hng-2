@@ -1,6 +1,6 @@
 "use client"
-import Hero from '@/components/HeroSection'
-import Featured from '@/components/FeaturedSection'
+import Hero from './(pages)/home/HeroSection'
+import Featured from './(pages)/home/FeaturedSection'
 import { useSwr } from '@/hooks/useSwr/useSwr'
 import styles from './page.module.scss'
 
