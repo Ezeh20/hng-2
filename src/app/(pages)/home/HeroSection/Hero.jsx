@@ -72,7 +72,7 @@ export const Hero = ({ data }) => {
                               <p>{tomatoRating.toFixed(1)}%</p>
                             </div>
                           </div>
-                          <Link href={`/movie/${id}`} className={styles.link}>
+                          <Link href={`/movies/${id}`} className={styles.link}>
                             <Button className={styles.button}>
                               <Image src={play} alt='play' />
                               <p>Watch trailer</p>

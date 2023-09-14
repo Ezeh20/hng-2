@@ -12,8 +12,9 @@ export const Cards = ({ itm }) => {
     const date = utc.toUTCString()
     const imbdRating = (vote_average * 10).toFixed(1)
     const tomatoRating = (vote_average * 10)
+
     return (
-        <Link href={`/movie/${id}`}>
+        <Link href={`/movies/${id}`}>
             <div data-testid='movie-card' className={styles.cardContainer}>
                 <Image data-testid='movie-poster'
                     width={250}
