@@ -13,7 +13,7 @@ export const Featured = ({ data }) => {
           <h2 className={styles.featured}>Featured Movie</h2>
           <p className={styles.see}>See more</p>
         </div>
-        <div>
+        <div className={styles.card}>
           {
             info?.map((itm) => {
               return (

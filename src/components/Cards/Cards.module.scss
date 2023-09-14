@@ -1,0 +1,47 @@
+.cardContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .img {
+        background-color: red;
+        width: 100%;
+        height: 370px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        padding-top: 12px;
+        gap: 12px;
+
+        .date {
+            color: #9CA3AF;
+            font-weight: 700;
+        }
+
+        .title {
+            color: #111827;
+            font-weight: 700;
+            font-size: 16px;
+
+            @media screen and (min-width:768px) {
+                font-size: 20px;
+            }
+        }
+        .rating{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            color: #111827;
+            justify-content: space-between;
+            .ratingContent{
+                @extend .rating;
+                justify-content: initial;
+                gap: .5rem;
+            }
+        }
+    }
+
+}
