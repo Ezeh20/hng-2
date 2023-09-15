@@ -17,6 +17,7 @@ export const Video = ({ slug }) => {
         }
         fetch()
     }, [slug])
+    
 
     return (
         <div className={styles.video}>
