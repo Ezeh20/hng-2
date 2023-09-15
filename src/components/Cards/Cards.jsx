@@ -25,8 +25,8 @@ export const Cards = ({ itm }) => {
     return (
         <div style={{ position: 'relative' }}>
             <Link prefetch={false} href={`/movies/${id}`}>
-                <div data-testid='movie-card' className={styles.cardContainer}>
-                    <Image data-testid='movie-poster'
+                <div data-testid="movie-card" className={styles.cardContainer}>
+                    <Image data-testid="movie-poster"
                         width={250}
                         height={370}
                         src={getImage.small(poster_path)}
@@ -34,8 +34,8 @@ export const Cards = ({ itm }) => {
                         className={styles.img}
                     />
                     <div className={styles.content}>
-                        <p data-testid='movie-release-date' className={styles.date}>{date}</p>
-                        <p data-testid='movie-title' className={styles.title}>{original_title}</p>
+                        <p data-testid="movie-release-date" className={styles.date}>{date}</p>
+                        <p data-testid="movie-title" className={styles.title}>{original_title}</p>
                         <div className={styles.rating}>
                             <div className={styles.ratingContent}>
                                 <Image src={imbd} alt='imbd' />

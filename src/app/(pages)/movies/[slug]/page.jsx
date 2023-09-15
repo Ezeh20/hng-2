@@ -36,9 +36,9 @@ const Details = ({ params }) => {
                     <div className={styles.mainContent}>
                         <div className={styles.titleSection}>
                             <div className={styles.info}>
-                                <p data-testid='movie-title'>{original_title}</p>
-                                <p data-testid='movie-release-date'>{date}</p>
-                                <p data-testid='movie-runtime'>{runtime}</p>
+                                <p data-testid="movie-title">{original_title}</p>
+                                <p data-testid="movie-release-date">{date}</p>
+                                <p data-testid="movie-runtime">{runtime}</p>
                             </div>
                             <div className={styles.genres}>
                                 {
@@ -63,7 +63,7 @@ const Details = ({ params }) => {
                     </div>
                     <div className={styles.overview}>
                         <div className={styles.left}>
-                            <p data-testid='movie-overview' className={styles.over}>{overview}</p>
+                            <p data-testid="movie-overview" className={styles.over}>{overview}</p>
                             <Cast slug={slug} />
                             <div className={styles.rated}>
                                 <div className={styles.popular}>
