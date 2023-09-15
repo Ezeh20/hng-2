@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { Button } from '@/components/Button/Button'
 import { Video } from './video/Video'
 import { Cast } from './cast/Cast'
+import { Sidebar } from './sidebar/Sidebar'
 import { useSwr } from '@/hooks/useSwr/useSwr'
 import styles from './Details.module.scss'
 
@@ -32,7 +33,7 @@ const Details = ({ params }) => {
         const rated = popularity.toFixed(0)
         return (
             <main className={styles.main}>
-                <p>Sidebar</p>
+                <Sidebar />
                 <section className={styles.details}>
                     <Video slug={slug} />
                     <div className={styles.content}>
