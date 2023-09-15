@@ -22,9 +22,9 @@ export const Cards = ({ itm }) => {
     }
 
     return (
-        <div style={{ position: 'relative' }}>
+        <div data-testid='movie-card' style={{ position: 'relative' }}>
             <Link prefetch={false} href={`/movies/${id}`}>
-                <div data-testid='movie-card' className={styles.cardContainer}>
+                <div className={styles.cardContainer}>
                     <Image data-testid='movie-poster'
                         width={250}
                         height={370}
