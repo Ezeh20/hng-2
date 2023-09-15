@@ -7,7 +7,7 @@ import styles from './page.module.scss'
 
 
 export default function Home() {
-  const { data, isLoading, error } = useSwr()
+  const { data, isLoading, error } = useSwr('/api/movie')
 
   if (isLoading) {
     return (

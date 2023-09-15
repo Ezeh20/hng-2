@@ -5,7 +5,7 @@ import styles from './Featured.module.scss'
 
 export const Featured = ({ data }) => {
   const info = data?.data.results.slice(0, 10)
-  console.log(info);
+
   return (
     <section className={styles.section}>
       <Container>
