@@ -1,4 +1,4 @@
-This is was made with next.js
+This was made with next.js
 To run,
 - clone the repo
 - run npm install to install the dependencies
