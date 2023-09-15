@@ -46,3 +46,19 @@
     }
 
 }
+
+.btn {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    &:hover{
+        cursor: pointer;
+    }
+
+    .img {
+        width: 40px;
+        height: 40px;
+    }
+}
