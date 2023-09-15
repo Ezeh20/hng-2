@@ -20,6 +20,7 @@ export const Cards = ({ itm }) => {
     const like = () => {
         setLiked(prev => !prev)
     }
+    
 
     return (
         <div data-testid='movie-card' style={{ position: 'relative' }}>
