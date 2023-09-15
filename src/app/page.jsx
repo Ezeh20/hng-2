@@ -7,22 +7,16 @@ import styles from './page.module.scss'
 
 
 export default function Home() {
-  const { data, isLoading, error } = useSwr('/api/movie')
+  const { data, error } = useSwr('/api/movie')
 
-  if (isLoading) {
-    return (
-      <div>
-        <p>Loading....</p>
-      </div>
-    )
-  } else if (error) {
+  if (error) {
     return (
       <div>
         <p>Something went wrong</p>
       </div>
     )
   }
-
+  
   return (
     <div className={styles.home}>
       <Hero data={data} />
