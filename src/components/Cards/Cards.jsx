@@ -20,12 +20,12 @@ export const Cards = ({ itm }) => {
     const like = () => {
         setLiked(prev => !prev)
     }
-    
+
 
     return (
-        <div data-testid='movie-card' style={{ position: 'relative' }}>
+        <div style={{ position: 'relative' }}>
             <Link prefetch={false} href={`/movies/${id}`}>
-                <div className={styles.cardContainer}>
+                <div data-testid='movie-card' className={styles.cardContainer}>
                     <Image data-testid='movie-poster'
                         width={250}
                         height={370}
