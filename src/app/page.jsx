@@ -7,7 +7,7 @@ import styles from './page.module.scss'
 
 
 export default function Home() {
-  const { data, error } = useSwr('/api/movie')
+  const { data, error } = useSwr(`https://api.themoviedb.org/3/movie/top_rated?api_key=357938cf01cd0b7cc3f1de72870b3bd3`)
 
   if (error) {
     return (

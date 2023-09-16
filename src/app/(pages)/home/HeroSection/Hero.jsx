@@ -15,7 +15,7 @@ const pag = [1, 2, 3, 4, 5]
 
 export const Hero = ({ data }) => {
   const [current, setCurrent] = useState(2)
-  const result = data?.data.results
+  const result = data?.results
   const slides = result?.slice(0, 5)
 
   //move to next slide onClick

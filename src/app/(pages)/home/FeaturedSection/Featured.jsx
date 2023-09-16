@@ -4,7 +4,7 @@ import { Cards } from '@/components/Cards/Cards'
 import styles from './Featured.module.scss'
 
 export const Featured = ({ data }) => {
-  const info = data?.data.results.slice(0, 10)
+  const info = data?.results.slice(0, 10)
 
   return (
     <section className={styles.section}>

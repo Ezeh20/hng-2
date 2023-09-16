@@ -7,14 +7,10 @@ export const Cast = ({ slug }) => {
     const [crew, setCrew] = useState()
 
     useEffect(() => {
-        const initial = {
-            id: slug,
-            media: 'credits'
-        }
         const fetch = async () => {
-            const { data } = await axios.post(`/api/media/`, initial)
-            setCast(data.data.cast.slice(0, 4))
-            setCrew(data.data.crew)
+            const { data } = await axios.get(`https://api.themoviedb.org/3/movie/${slug}/credits?api_key=357938cf01cd0b7cc3f1de72870b3bd3`)
+            setCast(data.cast.slice(0, 4))
+            setCrew(data.crew)
         }
         fetch()
     }, [slug])
