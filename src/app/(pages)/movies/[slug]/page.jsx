@@ -15,17 +15,11 @@ import styles from './Details.module.scss'
 
 const Details = ({ params }) => {
     const { slug } = params
-    const { data } = useSwr(`/api/movie/${slug}`)
+    const { data } = useSwr(`https://api.themoviedb.org/3/movie/${slug}?api_key=357938cf01cd0b7cc3f1de72870b3bd3`)
 
-    if (!data?.success) {
-        return <p>{data?.message}</p>
-    }
-
-    const { popularity, genres, release_date, overview, original_title, vote_average, vote_count, runtime } = data?.data
-    const utc = new Date(release_date)
-    const date = utc.toUTCString()
-    const vote = Number(vote_average)
-    const rated = popularity.toFixed(0)
+    const utc = new Date(data?.release_date).toUTCString()
+    const vote = Number(data?.vote_average)
+    const rated = data?.popularity.toFixed(0)
 
     return (
         <main className={styles.main}>
@@ -36,13 +30,13 @@ const Details = ({ params }) => {
                     <div className={styles.mainContent}>
                         <div className={styles.titleSection}>
                             <div className={styles.info}>
-                                <p data-testid="movie-title">{original_title}</p>
-                                <p data-testid="movie-release-date">{date}</p>
-                                <p data-testid="movie-runtime">{runtime}</p>
+                                <p data-testid="movie-title">{data?.original_title}</p>
+                                <p data-testid="movie-release-date">{data && utc}</p>
+                                <p data-testid="movie-runtime">{data?.runtime}</p>
                             </div>
                             <div className={styles.genres}>
                                 {
-                                    genres?.map(itm => {
+                                    data?.genres?.map(itm => {
                                         const { name } = itm
                                         return (
                                             <p key={name} className={styles.name}>{name}</p>
@@ -58,12 +52,12 @@ const Details = ({ params }) => {
                                 <p className={styles.avg}>{vote.toFixed(1)}</p>
                             </div>
                             <p>|</p>
-                            <p className={styles.count}>{vote_count}</p>
+                            <p className={styles.count}>{data?.vote_count}</p>
                         </div>
                     </div>
                     <div className={styles.overview}>
                         <div className={styles.left}>
-                            <p data-testid="movie-overview" className={styles.over}>{overview}</p>
+                            <p data-testid="movie-overview" className={styles.over}>{data?.overview}</p>
                             <Cast slug={slug} />
                             <div className={styles.rated}>
                                 <div className={styles.popular}>
@@ -96,6 +90,5 @@ const Details = ({ params }) => {
         </main>
     )
 }
-// }
 
 export default Details

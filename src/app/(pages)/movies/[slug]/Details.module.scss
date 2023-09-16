@@ -1,11 +1,10 @@
 .main {
-    max-width: 1920px;
+    width: 100%;
     height: max-content;
     display: flex;
     gap: 37px;
 
     .details {
-       
         display: flex;
         flex-direction: column;
         gap: 1.5rem;
